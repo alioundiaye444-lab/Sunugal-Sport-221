@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sunugal Sport 221 - Présentation Officielle</title>
+    <title>sunugal Sport 221</title>
     <style>
         /* --- SYSTÈME DE COULEURS FIGMA --- */
         :root {
@@ -336,6 +336,67 @@
             width: 350px;
             border-radius: 10px;
         }
+        /* --- ADAPTATION MOBILE (RESPONSIVE) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Empêcher le débordement horizontal */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* 2. Menu : on le passe en colonne pour qu'il ne s'écrase pas */
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul {
+        gap: 10px;
+        flex-wrap: wrap; /* Permet aux liens d'aller à la ligne si besoin */
+        justify-content: center;
+        padding-top: 10px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    /* 3. Accueil : réduire la taille du gros titre */
+    #accueil h1 {
+        font-size: 2.2rem !important; /* Plus petit pour mobile */
+        text-align: center;
+    }
+
+    #accueil {
+        padding: 0 5%;
+        align-items: center; /* Centre le titre et le bouton sur mobile */
+    }
+
+    /* 4. Grilles : on passe tout sur 1 seule colonne au lieu de 2 */
+    .grid-4, .grid-tarifs, .f-grid {
+        grid-template-columns: 1fr !important; 
+        padding: 0 5%;
+    }
+
+    /* 5. Coachs : aligner verticalement */
+    .flex-coach {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 6. Footer : empiler les éléments */
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
     </style>
 </head>
 
