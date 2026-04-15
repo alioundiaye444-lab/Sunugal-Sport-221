@@ -36,17 +36,18 @@
         }
 
         /* --- NAVIGATION --- */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            z-index: 1000;
-        }
+       header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%; /* Réduit un peu pour gagner de la place */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0; /* AJOUT IMPORTANT */
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+}
 
         .logo img {
             height: 45px;
@@ -338,6 +339,14 @@
         }
         /* --- ADAPTATION MOBILE (RESPONSIVE) --- */
 @media (max-width: 768px) {
+    img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    width: 100% !important; /* Pour que le titre ne soit pas bloqué à 450px sur mobile */
+}
     
     /* 1. Empêcher le débordement horizontal */
     body {
@@ -423,7 +432,7 @@
             A DAKAR
         </h1>
 
-        <button href="#tarifs" class="btn-discover">Découvrez nos tarifs</button>
+        <a href="#tarifs" class="btn-discover">Découvrez nos tarifs</a>
     </section>
 
     <h2 class="section-title" id="programmes">Nos Programmes</h2>
