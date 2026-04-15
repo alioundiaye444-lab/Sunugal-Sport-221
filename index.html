@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sunugal Sport 221 - Présentation Officielle</title>
+    <style>
+        /* --- SYSTÈME DE COULEURS FIGMA --- */
+        :root {
+            --bg-dark: #0f140f;
+            /* Le noir/vert profond du fond */
+            --gold: #c2b35a;
+            /* Le doré des titres et bordures */
+            --green-btn: #1a5d1a;
+            /* Le vert du bouton Hero */
+            --card-white: #ffffff;
+            /* Fond des cartes programmes/coachs */
+            --tarif-yellow: #dad891;
+            /* Le jaune moutarde des tarifs */
+            --text-gray: #444444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif, Arial;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            line-height: 1.4;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        /* --- SECTION 1: HERO --- */
+        #accueil {
+            height: 100vh;
+            /* On utilise l'image locale et on ajoute un dégradé pour que le texte blanc ressorte bien */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            margin-top: 0;
+            /* Pour bien coller au haut de la page */
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            width: 450px;
+            line-height: 1;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+
+        .btn-discover {
+            background-color: var(--green-btn);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        /* --- TITRES --- */
+        .section-title {
+            color: var(--gold);
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 80px 0 50px;
+            text-transform: capitalize;
+        }
+
+        /* --- SECTION 2: PROGRAMMES (4 CARTES) --- */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 0 10%;
+        }
+
+        .card-prog {
+            background: var(--card-white);
+            border-radius: 12px;
+            overflow: hidden;
+            color: black;
+            border: 2px solid #0a3a0a;
+        }
+
+        .card-prog img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-prog-content {
+            padding: 15px;
+        }
+
+        .card-prog-content h3 {
+            color: #0a3a0a;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .card-prog-content ul {
+            list-style: none;
+            font-size: 0.85rem;
+        }
+
+        .btn-red-small {
+            background: #a00;
+            color: white;
+            padding: 4px 15px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            float: right;
+            margin-top: -20px;
+        }
+
+        /* --- SECTION 3: TARIFS (4 BOITES) --- */
+        .grid-tarifs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 0 15%;
+        }
+
+        .tarif-box {
+            background-color: var(--tarif-yellow);
+            color: black;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .tarif-box h4 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            opacity: 0.8;
+        }
+
+        .tarif-box .price {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #111;
+        }
+
+        .tarif-box .insc-btn {
+            font-size: 0.7rem;
+            color: #a00;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* --- SECTION 4: COACHS (HOMMES & FEMMES) --- */
+        .coach-wrap {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .gender-label {
+            margin: 30px 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .flex-coach {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 0 5%;
+        }
+
+        .card-coach {
+            background: white;
+            color: black;
+            width: 220px;
+            border-radius: 15px;
+            padding: 50px 15px 20px;
+            margin-top: 60px;
+            position: relative;
+            text-align: center;
+        }
+
+        .card-coach img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: -50px;
+            left: 60px;
+            border: 4px solid var(--gold);
+            object-fit: cover;
+        }
+
+        .card-coach h4 {
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .card-coach p {
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* --- SECTION 5: TÉMOIGNAGES (4 CARTES) --- */
+        .grid-temoins {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 0 10%;
+        }
+
+        .card-temoin {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .card-temoin img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid var(--gold);
+        }
+
+        .card-temoin p {
+            font-size: 0.8rem;
+            margin-top: 25px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* --- SECTION 6: FORMULAIRE --- */
+        #contact {
+            padding: 40px 10%;
+        }
+
+        .form-box {
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        input,
+        select {
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            background: white;
+        }
+
+        .full {
+            grid-column: span 2;
+        }
+
+        .btn-finish {
+            background: color rgb(74, 7, 7) (--tarif-yellow);
+            border: none;
+            padding: 12px 40px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #000000;
+            padding: 50px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .map-img img {
+            width: 350px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"><img src="logo.png" alt="SENEGAL SPORT 221"></div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#programmes">Programmes</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#coach">Coach</a></li>
+                <li><a href="#Inscription">Inscription</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil">
+        <h1 style="font-size: 3.4rem; font-weight: 700; line-height: 1.1; margin-bottom: 15px;">
+            DEPASSEZ <br>
+            VOS LIMITES <br>
+            A DAKAR
+        </h1>
+
+        <button href="#tarifs" class="btn-discover">Découvrez nos tarifs</button>
+    </section>
+
+    <h2 class="section-title" id="programmes">Nos Programmes</h2>
+    <div class="grid-4">
+        <div class="card-prog">
+            <img src="https://i.pinimg.com/736x/10/8d/10/108d10156672b63fd5f3862b2319a031.jpg" alt="">
+            <div class="card-prog-content">
+                <h3>CROSS-TRAINING CIRCUIT</h3>
+                <ul>
+                    <li>• Améliorer votre cardio</li>
+                    <li>• Force & Endurance</li>
+                </ul>
+                <ul>
+                    <li>• Renforcement
+                        musculaire complet</li>
+                    <li>• Séance de groupe motivante</li>
+                </ul>
+                <button type="submit" class="btn-finish">Confirmer l'inscription</button>
+            </div>
+        </div>
+        <div class="card-prog">
+            <img src="https://i.pinimg.com/736x/43/74/e4/4374e424fda519ad2a5ac49d735d3cf0.jpg" alt="">
+            <div class="card-prog-content">
+                <h3>FITNESS FEMME</h3>
+                <ul>
+                    <li>• Perte de poids ciblée</li>
+                    <li>• Tonification douce</li>
+                    <li>• Espace ideal dedié aux femmes</li>
+                    <li>• Coaching bienveillant</li>
+                </ul>
+                <button type="submit" class="btn-finish">Confirmer l'inscription</button>
+            </div>
+        </div>
+        <div class="card-prog">
+            <img src="https://i.pinimg.com/736x/90/5d/fc/905dfc685236b8bd19b1230f215632b2.jpg" alt="">
+            <div class="card-prog-content">
+                <h3>MUSCULATION</h3>
+                <ul>
+                    <li>• Prise de masse</li>
+                    <li>• Coaching personnalisé</li>
+                    <li>• Prise de masse</li>
+                    <li>• Équipement de pointe</li>
+                </ul>
+                <button type="submit" class="btn-finish">Confirmer l'inscription</button>
+            </div>
+        </div>
+        <div class="card-prog">
+            <img src="https://i.pinimg.com/1200x/6c/a8/d3/6ca8d3baf3d686db60bd874d96403dc4.jpg" alt="">
+            <div class="card-prog-content">
+                <h3>YOGA</h3>
+                <ul>
+                    <li>• Flexibilité</li>
+                    <li>• Bien-être mental</li>
+                    <li>• Respiration et méditation</li>
+                    <li>• Espace calme et propice à la détente</li>
+                </ul>
+                <button type="submit" class="btn-finish">Confirmer l'inscription</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="tarifs">Nos Tarifs</h2>
+    <div class="grid-tarifs">
+        <div class="tarif-box">
+            <h3>PLAN Dakar (BASIC)</h3>
+            <p class="price">15.000 FCFA / mois</p>
+            <p>Acces limité</p>
+            <p>30mn de coaching par jour</p>
+            <p>Acces aux Spa gratuits</p>
+            <button type="submit" class="btn-finish">Confirmer l'inscription</button>
+        </div>
+        <div class="tarif-box">
+            <h3>PLAN Mbour (Premium)</h3>
+            <p class="price">50.000 FCFA / mois</p>
+            <p>Acces illimité</p>
+            <p>1 heure de coaching par jour</p>
+            <p>Acces aux Super Spa gratuits</p>
+            <button type="submit" class="btn-finish">Confirmer l'inscription</button>
+        </div>
+        <div class="tarif-box">
+            <h3>PLAN Saint-louis (Full)</h3>
+            <p class="price">70.000 FCFA / mois</p>
+            <p>Acces illimité</p>
+            <p>1 heure de coaching par jour</p>
+            <p>Acces aux Super Spa gratuits</p>
+            <button type="submit" class="btn-finish">Confirmer l'inscription</button>
+        </div>
+        <div class="tarif-box">
+            <h3>PLAN Afrique (Full)</h3>
+            <p class="price">100.000 FCFA / mois</p>
+            <p>Acces illimité</p>
+            <p>Choix de coach</p>
+            <p>Acces partout</p>
+            <button type="submit" class="btn-finish">Confirmer l'inscription</button>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="coach">Nos Coach</h2>
+    <div class="coach-wrap">
+        <p class="gender-label">Pour Homme</p>
+        <div class="flex-coach">
+            <div class="card-coach"><img src="https://i.pinimg.com/1200x/f7/f4/2c/f7f42c6216858d895306580753290bc9.jpg"
+                    alt="">
+                <h4>Moussa Diop</h4>
+                <p>Expert Musculation</p>
+                <p>Experience: 10 ans</p>
+                <p>Tres dynamique</p>
+            </div>
+            <div class="card-coach"><img src="https://i.pinimg.com/736x/b6/ad/50/b6ad50747cc4d16e486e20facc8f8537.jpg"
+                    alt="">
+                <h4>Omar Wade</h4>
+                <p>Coach Cross-Training</p>
+                <p>Experience: 8 ans</p>
+                <p>Passionné par le sport</p>
+            </div>
+            <div class="card-coach"><img src="https://i.pinimg.com/1200x/ef/76/60/ef766043ee3a19da58e19c43cad0952c.jpg"
+                    alt="">
+                <h4>Cheikh Sarr</h4>
+                <p>Nutritionniste Sportif</p>
+                <p>Experience: 12 ans</p>
+                <p>Expert en nutrition sportive</p>
+
+            </div>
+        </div>
+        <p class="gender-label">Pour Femme</p>
+        <div class="flex-coach">
+            <div class="card-coach"><img src="https://i.pinimg.com/1200x/ea/6b/52/ea6b5251eb870bb33083c1aa8d77d1bc.jpg"
+                    alt="">
+                <h4>Amina Fall</h4>
+                <p>Coach Fitness</p>
+                <p>Experience: 5 ans</p>
+                <p>Passionnée par le yoga</p>
+                <p>Tres actif</p>
+            </div>
+            <div class="card-coach"><img src="https://i.pinimg.com/1200x/dd/c9/4a/ddc94ab608c289ba978c2d241a4a0844.jpg"
+                    alt="">
+                <h4>Fatou Tall</h4>
+                <p>Posture et bien-etre</p>
+                <p>Experience: 6 ans</p>
+                <p>Spécialiste en yoga et pilates</p>
+                <p>Tres Serviable</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Témoignages</h2>
+    <div class="grid-temoins">
+        <div class="card-temoin"><img src="https://i.pinimg.com/736x/94/6b/63/946b6399e650f9f7a74d5e1b3f442f05.jpg"
+                alt="">
+            <p>"Résultats incroyables en 3 mois !. Je suis très satisfaite de mon expérience à Sunugal sport 221. j'aime
+                beaucoup ce club !Je recommande vivement ce lieu à tous ceux qui souhaitent progresser dans leur santé
+                et leur forme."</p>
+        </div>
+        <div class="card-temoin"><img src="https://i.pinimg.com/736x/90/6b/25/906b250c279b2b3f44a04e4c2aaa4c61.jpg"
+                alt="">
+            <p>"L'ambiance est motivante à chaque séance. il y a toujours une ambiance chaleureuse et accueillante. Ils
+                font preuve d'une grande empathie et de professionnalisme.Ils sont très serviables."</p>
+        </div>
+        <div class="card-temoin"><img src="https://i.pinimg.com/1200x/f6/c1/9b/f6c19bf138f5e2e1d59f9f69015bb861.jpg"
+                alt="">
+            <p>"Les coachs sont très professionnels et tres joviaux. Ils sont toujours prêts à vous aider à atteindre
+                vos objectifs.Tout le monde est très accueillant et sympathique. Donc je recommande ce club à tous ceux
+                qui souhaitent progresser dans leur santé et leur forme."</p>
+        </div>
+        <div class="card-temoin"><img src="https://i.pinimg.com/736x/6c/77/c3/6c77c35958485a7da3962b232def2dbf.jpg"
+                alt="">
+            <p>"La salle Sunugal sport 221 est le meilleur club de Dakar sans aucun doute. Je recommande vivement ce
+                lieu à tous ceux qui souhaitent progresser dans leur santé et leur forme.Franchement, c'est le meilleur
+                endroit pour s'entraîner !"</p>
+        </div>
+    </div>
+
+    <section id="contact">
+        <h2 class="section-title">Formulaire d'inscription</h2>
+        <div class="form-box">
+            <form class="f-grid">
+                <input type="text" placeholder="Nom">
+                <input type="text" placeholder="Prénom">
+                <input type="email" placeholder="E-mail">
+                <input type="tel" placeholder="Téléphone">
+                <select class="full">
+                    <option>Choisir du plan</option>
+                </select>
+            <button type="submit" class="btn-finish">Confirmer l'inscription</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contact-txt">
+            <p style="color:var(--gold)">Contact :</p>
+            <p>Lieu:Touba darou Khouddos, Senegal</p>
+            <p>Tel:+221 78 544 17 21/ 221 70 669 91 57</p>
+            <p>Email: info@Sunugaksport221.com</p>
+        </div>
+        <div class="map-img"><img src="https://i.pinimg.com/1200x/16/a6/56/16a65667ea9fa66771b04416d1553f22.jpg"
+                alt="Google Map"></div>
+    </footer>
+
+</body>
+
+</html>
