@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunugal Sport 221 - Nos Coachs</title>
+    <style>
+        /* --- VARIABLES ET RESET --- */
+        :root {
+            --dark-green: #051605; /* Fond vert très foncé de ta maquette */
+            --gold: #c2b35a;       /* Couleur dorée des titres */
+            --light-gold: #dad891; /* Jaune clair pour les boutons et le footer */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-green);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION (Header) --- */
+        header {
+            background-color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 40px; /* Balise pour ton petit logo en haut à gauche */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        /* --- SECTION COACH PRINCIPAL (Moussa Diop) --- */
+        .main-coach-section {
+            padding: 80px 15%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        /* Le conteneur de l'image avec le cadre blanc arrondi de ta maquette */
+        .coach-profile-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            color: #333;
+            width: 300px;
+        }
+
+        .coach-profile-card img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .coach-info-text h1 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .coach-info-text h3 {
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .description {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        .btn-subscribe {
+            background-color: var(--light-gold);
+            color: #000;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* --- SECTION LES ACCOMPAGNANTS (Grid) --- */
+        .team-section {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .team-title {
+            color: var(--gold);
+            font-size: 2.2rem;
+            margin-bottom: 60px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 colonnes comme sur ta maquette */
+            gap: 40px;
+            justify-items: center;
+        }
+
+        /* Style des petites cartes de coachs */
+        .team-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px 20px;
+            width: 280px;
+            position: relative;
+            margin-top: 50px; /* Espace pour l'image qui dépasse */
+            color: #333;
+        }
+
+        /* Variantes pour les cartes du bas (couleur dorée selon ta maquette) */
+        .team-card.gold-bg {
+            background-color: var(--light-gold);
+        }
+
+        .team-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            position: absolute;
+            top: -60px; /* Fait dépasser l'image en haut */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .team-card h4 {
+            color: var(--gold);
+            margin-top: 60px;
+            margin-bottom: 10px;
+        }
+
+        .team-card.gold-bg h4 {
+            color: #8b0000; /* Rouge foncé pour les noms sur fond jaune */
+        }
+
+        .team-card p {
+            font-size: 0.9rem;
+        }
+
+        /* --- FOOTER (Barre Jaune) --- */
+        footer {
+            background-color: var(--light-gold);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .footer-left {
+            color: #8b0000;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .footer-logo img {
+            height: 50px; /* Balise pour ton logo central (baobab/athlète) */
+        }
+
+        .footer-right {
+            text-align: right;
+            color: #333;
+            font-size: 10px;
+        }
+
+        .social-icons {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            .main-coach-section { flex-direction: column; text-align: center; }
+            .team-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; }
+            nav ul { margin-top: 15px; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Logo.jpg" alt="Logo Sunugal">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html/#Programmes">Programmes</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="index.html/#coach" style="color:var(--gold)">coachs</a></li>
+                <li><a href="#inscription">Inscription</a></li>
+                <li><a href="#contact">Conctact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-coach-section">
+        <div class="coach-profile-card">
+            <img src="Mousa.jpg" alt="Moussa Diop">
+            <h3>Moussa Diop</h3>
+            <p>Spécialiste Musculation avec 10 ans d'expériences</p>
+        </div>
+
+        <div class="coach-info-text">
+            <h1>Moussa Diop</h1>
+            <h3>Spécialiste Musculation avec 16 ans d'expériences</h3>
+            <p class="description">
+                Passionné de fitness depuis plus de deux décennies, Moussa s'est spécialisé dans la musculation et la transformation corporelle. Sa philosophie est basée sur la discipline et le mouvement conscient.<br><br>
+                Ses qualifications incluent (Perte de poids et la transformation corporelle). Il a accompagné plus de 300 clients vers leurs objectifs.
+            </p>
+            <button class="btn-subscribe">Souscrire Maintenant</button>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <h2 class="team-title">Les Accompagnants</h2>
+        
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="Sarr.jpg" alt="Cheikh Sarr">
+                <h4>Cheikh Sarr</h4>
+                <p>Spécialiste en Nutrition & Force avec 7 ans d'expérience</p>
+            </div>
+
+            <div class="team-card">
+                <img src="Ousmane.jpg" alt="Ousmane Wade">
+                <h4>Ousmane Wade</h4>
+                <p>Cross-Training<br>Ex-athlète National<br>3 fois champion d'Afrique</p>
+            </div>
+
+            <div class="team-card gold-bg">
+                <img src="Ndey.jpg" alt="Ndey Amy">
+                <h4>Ndey Amy</h4>
+                <p>Coach Certifiée Fitness Femme, Yoga avec 4 ans d'expérience</p>
+            </div>
+
+            <div class="team-card gold-bg">
+                <img src="Fatou.jpg" alt="Fatou Thiam">
+                <h4>Fatou Thiam</h4>
+                <p>Pilates, Posture et Bien-être avec 5 ans d'expérience</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-left">
+            <p>SUNUGAL SPORT 221</p>
+            <p style="font-size: 8px; font-weight: normal;">Copyright 2026, Avril</p>
+        </div>
+
+        <div class="footer-logo">
+            <img src="Logo.jpg" alt="Logo Central">
+        </div>
+
+        <div class="footer-right">
+            <p>SUIVEZ-NOUS SUR :</p>
+            <div class="social-icons">f 𝕏 in </div>
+        </div>
+    </footer>
+
+</body>
+</html>

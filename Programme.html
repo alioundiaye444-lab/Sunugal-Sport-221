@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunugal Sport 221 - Nos Programmes</title>
+    <style>
+        /* --- VARIABLES DE COULEURS FIGMA --- */
+        :root {
+            --dark-green: #051605; /* Le fond vert profond */
+            --gold-main: #c2b35a;  /* Le doré des titres */
+            --light-bg: #dad891;   /* Le jaune du footer */
+            --white: #ffffff;
+        }
+
+        /* --- RESET ET BASES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif, Arial;
+        }
+
+        body {
+            background-color: var(--dark-green);
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        /* --- NAVIGATION (HEADER) --- */
+        header {
+            background-color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo img {
+            height: 45px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover, .active {
+            color: #1a5d1a; /* Vert pour le lien actif */
+        }
+
+        /* --- SECTION PROGRAMME VEDETTE (MUSCULATION LEGENDE) --- */
+        .hero-program {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 8%;
+            gap: 40px;
+        }
+
+        .hero-image-container img {
+            width: 500px;
+            border-radius: 20px;
+            border: 3px solid var(--gold-main);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-text-box {
+            border: 2px solid var(--gold-main);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 550px;
+        }
+
+        .hero-text-box h1 {
+            color: var(--gold-main);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-text-box ul {
+            list-style: none;
+        }
+
+        .hero-text-box li {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .hero-text-box li strong {
+            color: var(--gold-main);
+            display: block;
+        }
+
+        .btn-cta {
+            background-color: #8b8000;
+            color: white;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /* --- GRILLE DES PETITS PROGRAMMES --- */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colonnes comme sur Figma */
+            gap: 30px;
+            padding: 60px 10%;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            color: #333;
+            border: 3px solid #1a5d1a;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: #1a5d1a;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 0.85rem;
+            color: #8b0000; /* Rouge bordeaux pour les détails */
+            font-weight: bold;
+        }
+
+        /* --- FOOTER (CONFORME À TA CAPTURE) --- */
+        footer {
+            background-color: var(--light-bg);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .footer-brand {
+            color: #051605;
+            font-weight: bold;
+        }
+
+        .footer-logo img {
+            height: 60px;
+        }
+
+        .footer-socials {
+            text-align: right;
+            color: #051605;
+            font-size: 12px;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 900px) {
+            .hero-program { flex-direction: column; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .hero-image-container img { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-logo">
+            <img src="Logo.jpg" alt="Logo Sunugal Sport">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programmes.html" class="active">Programmes</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="coachs.html">coachs</a></li>
+                <li><a href="#inscription">Inscription</a></li>
+                <li><a href="#contact">Conctact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-program">
+        <div class="hero-image-container">
+            <img src="Legend.jpg" alt="Musculation Legend">
+        </div>
+        
+        <div class="hero-text-box">
+            <h1>MUSCULATION LEGENDE</h1>
+            <ul>
+                <li><strong>• Améliorez votre cardio</strong> Augmentation de l'endurance cardiovasculaire grâce à des protocoles d'entraînement.</li>
+                <li><strong>• Renforcement musculaire complet</strong> Développement harmonieux de la force et de la masse musculaire sur l'ensemble du corps.</li>
+                <li><strong>• Séance de groupe motivante</strong> Entraînement en petit groupe de 8-12 personnes maximum.</li>
+                <li><strong>• Accès matériel de pointe</strong> Utilisation exclusive de racks de puissance et barres olympiques.</li>
+            </ul>
+            <a href="#inscription" class="btn-cta">Souscrire maintenant</a>
+        </div>
+    </section>
+
+    <section class="programs-grid">
+        <div class="card">
+            <img src="Fit.jpg" alt="Fitness Femme">
+            <div class="card-content">
+                <h3>Fitness Femme</h3>
+                <p>• Perte de poids ciblée<br>• Todification douce<br>• Espace dédié</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Cross.jpg" alt="Cross-Training">
+            <div class="card-content">
+                <h3>Cross-Training sene fit</h3>
+                <p>• Améliorez votre cardio<br>• Renforcement musculaire complet<br>Séance de groupe motivante</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Yoga.jpg" alt="Yoga">
+            <div class="card-content">
+                <h3>YOGA</h3>
+                <p>• Flexibilité & équilibre<br>• Réduction du stress<br>• Bien être global</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">
+            SUNUGAL SPORT 221
+        </div>
+        <div class="footer-logo">
+            <img src="Logoo.png" alt="Logo Central">
+        </div>
+        <div class="footer-socials">
+            SUIVEZ-NOUS SUR:<br>
+            f @ X in
+        </div>
+    </footer>
+
+</body>
+</html>
